@@ -27,7 +27,7 @@ router.route('/shops')
 
 router.route('/shops/:shop_id')
 .get(shopController.findShop)
-.post(shopController.updateShop)
+.put(shopController.updateShop)
 .delete(shopController.deleteShop)
 
 router.route('/search/:name')
