@@ -23,6 +23,7 @@ router.get('/',function(req,res){
 router.route('/shops')
 .post(shopController.postShop)
 .get(shopController.getShop)
+.patch(shopController.updateShop)
 
 
 router.route('/shops/:shop_id')
