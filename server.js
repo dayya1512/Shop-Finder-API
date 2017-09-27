@@ -28,12 +28,12 @@ router.route('/shops')
 
 router.route('/shops/:shop_id')
 .get(shopController.findShop)
-.patch(shopController.updateShop)
+.post(shopController.updateShop)
 .delete(shopController.deleteShop)
 
 router.route('/search/:name')
 .get(shopController.findShopByName)
-.patch(shopController.updateShopByName)
+.post(shopController.updateShopByName)
 .delete(shopController.deleteShopByName)
 
 app.use('/',router)
