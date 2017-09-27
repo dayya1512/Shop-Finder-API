@@ -5,7 +5,9 @@ exports.postShop = function(req,res){
 	shop.name = req.body.name;
 	shop.description = req.body.description;
 	shop.image = req.body.image;
-	shop.location = req.body.location;
+	shop.address = req.body.address;
+	shop.lat = req.body.lat;
+	shop.long = req.body.long;
 	shop.category = req.body.category;
 	shop.email= req.body.email;
 	shop.phone = req.body.phone;
@@ -55,10 +57,12 @@ exports.updateShop = function(req,res){
 	shop.name = req.body.name;
 	shop.description = req.body.description;
 	shop.image = req.body.image;
-	shop.location = req.body.location;
+	shop.address = req.body.address;
+	shop.lat = req.body.lat;
+	shop.long = req.body.long;
 	shop.category = req.body.category;
 	shop.email= req.body.email;
-	shop.phone = req.body.phone;;
+	shop.phone = req.body.phone;
 
  		shop.save(function(err){
  			if (err) 
@@ -74,7 +78,9 @@ exports.updateShopByName = function(req,res){
 	shop.name = req.body.name;
 	shop.description = req.body.description;
 	shop.image = req.body.image;
-	shop.location = req.body.location;
+	shop.address = req.body.address;
+	shop.lat = req.body.lat;
+	shop.long = req.body.long;
 	shop.category = req.body.category;
 	shop.email= req.body.email;
 	shop.phone = req.body.phone;
