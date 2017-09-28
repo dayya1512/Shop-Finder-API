@@ -111,3 +111,31 @@ exports.deleteShopByName = function(req,res){
         });	
 }
 
+
+exports.getCommentForShop = function(req,res){}
+exports.createCommentForShop= function(req,res){
+
+ Shop.findById(req.params.shop_id, function(err, shop) {
+	if (err){
+	 	 res.send(err);
+	}
+
+	else {
+	 	var newComment = {
+	 		commentName : req.body.commentName,
+	 		commentDescription : req.body.commentDescription
+	 	}
+
+	 	shop.comment.push(newComment)
+	 	shop.save(function(err) {
+			if (err){
+				res.send(err);
+			}
+
+			else {
+				res.json({ message: 'Shop comment added' });
+			}
+		});
+	}
+ });
+}

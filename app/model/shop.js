@@ -2,6 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
+var commentSchema = new Schema ({
+	commentName: String,
+	commentDescription: [String],
+});
+
+
 var shopSchema = new Schema ({
 
 	name: String,
@@ -13,7 +19,7 @@ var shopSchema = new Schema ({
 	category: String,
 	email: String,
 	phone: Number,
-
-})
+	comment: [commentSchema],
+});
 
 module.exports = mongoose.model('Shop',shopSchema)

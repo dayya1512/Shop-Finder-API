@@ -23,13 +23,14 @@ router.get('/',function(req,res){
 router.route('/shops')
 .post(shopController.postShop)
 .get(shopController.getShop)
-.patch(shopController.updateShop)
-
 
 router.route('/shops/:shop_id')
 .get(shopController.findShop)
 .post(shopController.updateShop)
 .delete(shopController.deleteShop)
+
+router.route('/shops/:shop_id/comment')
+.post(shopController.createCommentForShop)
 
 router.route('/search/:name')
 .get(shopController.findShopByName)
