@@ -11,7 +11,7 @@ exports.postShop = function(req,res){
 	shop.category = req.body.category;
 	shop.email= req.body.email;
 	shop.phone = req.body.phone;
-
+	shop.comment = [];
 
  	shop.save(function(err,shop){
  		if (err) {
@@ -63,6 +63,7 @@ exports.updateShop = function(req,res){
 	shop.category = req.body.category;
 	shop.email= req.body.email;
 	shop.phone = req.body.phone;
+	shop.comment = [];
 
  		shop.save(function(err){
  			if (err) 
@@ -84,6 +85,7 @@ exports.updateShopByName = function(req,res){
 	shop.category = req.body.category;
 	shop.email= req.body.email;
 	shop.phone = req.body.phone;
+	shop.comment = [];
 
  		shop.save(function(err){
  			if (err) 
